@@ -124,10 +124,14 @@ int main(){
                 printf("Name: ");
                 scanf("%[^\n]s",name);
                 node = search(root,createData(name,telephone,balance));
-                if (node == NULL) printf("Not Exits\n");
+                if (node == NULL){
+                    printf("Not Exits\n");
+                    continue;;
+                }
                 else
-                    node->total = 0;
+                    root = deleteNode(root,createData(name,telephone,balance));
                 printData(root);
+            break;
             case 6:
                 printf("Exporting....\n");
                 FILE *fout = fopen("bank_out.db","w+");
@@ -137,5 +141,5 @@ int main(){
                 exportData(root, fout,&times);
             break;
         }
-    }while(choice != 6);
+    }while(choice != 7);
 }

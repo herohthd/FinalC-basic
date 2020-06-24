@@ -40,6 +40,7 @@ void prettyPrint(tree t,char *prefix);
 int countInnerNode(tree t);
 int rightChildCount(tree t);
 char* treeToString(tree t);
+
 void traversal(tree t);
 void printAccount(tree t);
 #endif
